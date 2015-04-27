@@ -1,4 +1,4 @@
-package main
+package command
 
 import (
   "bytes"
@@ -6,8 +6,8 @@ import (
   "os/exec"
 )
 
-func execute(command string, args ...string) string {
-    cmd := exec.Command(command, args)
+func ExecuteCommand(command string, args ...string) string {
+    cmd := exec.Command(command, args...)
     var out bytes.Buffer
     cmd.Stdout = &out
     err := cmd.Run()
